@@ -1,0 +1,51 @@
+
+.top img{
+width: 100px;
+height: 100px;
+
+}
+.profile__container{   
+     background-color: aqua;
+     padding: 45px 0px;
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px;
+     background-color: rgb(250, 249, 254);
+     background: url(/static/pic/wavy-background-180786598e741294f08ecaf1990ddc76.png);
+     border-radius: 10px;
+
+}
+.logout__button{
+        margin-left: 38%;
+        margin-top: 10px;
+        padding: 0.75rem 1.5rem;
+        outline: none;
+        border: none;
+        font-size: 1rem;
+        white-space: nowrap;
+        color: var(--white);
+        background-color: var(--primary-color);
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+      
+}
+.logout__button:hover{
+        background-color: var(--primary-color-dark);
+        transform: scale(1.1);
+    
+}
+.top{
+    justify-items: center;
+    margin-bottom: 80px;
+}
+.side{
+    padding-left: 150px;
+}
+.side p{
+    font-size: 20px;
+    font-weight: 500;
+}
+@media (max-width:850px){
+    .side{
+        padding-left: 40px;
+    }
+}

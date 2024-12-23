@@ -1,0 +1,52 @@
+
+.price__container :is(.section__header, .section__description) {
+    width: fit-content;
+    margin-inline: auto;
+    text-align: center;
+  }
+  
+  .price__container .section__header::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .price__grid {
+    margin-top: 4rem;
+    display: grid;
+    gap: 2rem;
+  }
+  
+  .price__card {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .price__content {
+    flex: 1;
+    margin-bottom: 2rem;
+  }
+  
+  .price__content img {
+    max-width: 70px;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .price__content h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+  
+  .price__content p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+  }
+  
+  .price__content hr {
+    margin-bottom: 1rem;
+  }

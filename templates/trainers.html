@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/trainers.css">
+    <title>APEX</title>
+    <link rel="icon" href="/static/pic/qq.png">  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="nav__header">
+          <div class="nav__logo">
+            <a href="/index.html"><img src="/static/pic/qq.png" alt="logo" /><p>A<span style="color: red;">P</span>EX GYM</p></a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <span><i class="ri-menu-line"></i></span>
+          </div>
+       
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li class="link"><a href="/index.html">Home</a></li>
+          <li class="link"><a href="/about.html">About</a></li>
+          <li class="link"><a href="/class.html">Classes</a></li>
+          <li class="link"><a href="/trainers.html">Trainers</a></li>
+          <li class="link"><a href="/pricing.html">Pricing</a></li>
+          <li class="link"><button class="btn" onclick="window.location.href='contact_us.html'  ">Contact Us</button></li>
+        </ul>
+        <button class="login-profile" 
+    onclick="window.location.href='/login.html'">
+    <img src="/static/pic/login.png" alt="Profile" class="profile_icon">
+   
+</button> 
+<button class="probtn" onclick="window.location.href='/profileunsignned.html'"><img src="/static/pic/user.png"class="userimg" alt=""></button>
+
+        <!-- <button class="login-profile" 
+        onclick="window.location.href='{% if (session['username']) %}/profile/{{session['username']}}{% else %}/login.html{% endif %}'">
+        <img src="/static/pic/user.png" alt="Profile" class="profile_icon">
+    </button> -->
+    
+        </nav>
+    </header>
+
+    <section class="section__container trainer__container" id="trainer">
+      <h2 class="section__header">Our Trainers</h2>
+      <p class="section__description">
+        Our trainers are more than just experts in exercise; they are passionate
+        about helping you achieve your health and fitness goals. Our trainers
+        are equipped to tailor workout programs to meet your unique needs.
+      </p>
+      <div class="trainer__grid">
+        <div class="trainer__card">
+          <img src="/static/pic/mmii.jpg" alt="trainer" />
+        </div>
+        <div class="trainer__card">
+          <div class="trainer__content">
+            <h4>Big Mo</h4>
+            <h5> personal trainer</h5>
+            <hr />
+            <p>
+              Bigger than big ramy, big show and big yasmine combined. he's dedicated to helping
+              you reach your peak physical performance.
+            </p>
+            <div class="trainer__socials">
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+              <a href="#"><i class="ri-google-fill"></i></a>
+              <a href="#"><i class="ri-instagram-line"></i></a>
+              <a href="#"><i class="ri-twitter-fill"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="trainer__card">
+          <img src="/static/pic/trainer-2.jpg" alt="trainer" />
+        </div>
+        <div class="trainer__card">
+          <div class="trainer__content">
+            <h4>Mark Harris</h4>
+            <h5>HIIT and Functional</h5>
+            <hr />
+            <p>
+              His energetic and dynamic workouts are designed to push your
+              limits, boost metabolism, and torch calories.
+            </p>
+            <div class="trainer__socials">
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+              <a href="#"><i class="ri-google-fill"></i></a>
+              <a href="#"><i class="ri-instagram-line"></i></a>
+              <a href="#"><i class="ri-twitter-fill"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="trainer__card">
+          <img src="/static/pic/trainer-3.jpg" alt="trainer" />
+        </div>
+        <div class="trainer__card">
+          <div class="trainer__content">
+            <h4>Emily Davis</h4>
+            <h5>Yoga and Mindfulness</h5>
+            <hr />
+            <p>
+              Emily's sessions are about physical postures and also about
+              cultivating inner peace and mindfulness.
+            </p>
+            <div class="trainer__socials">
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+              <a href="#"><i class="ri-google-fill"></i></a>
+              <a href="#"><i class="ri-instagram-line"></i></a>
+              <a href="#"><i class="ri-twitter-fill"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <div class="footer__logo">
+          <a href="/index.html"><img src="/static/pic/qq.png" alt="logo" /><p>A<span style="color: red;">P</span>EX GYM</p></a>
+        </div>
+        <p>
+          Take the first step towards a healthier, stronger you with our
+          unbeatable pricing plans. Let's sweat, achieve, and conquer
+          together!
+        </p>
+        <div class="footer__socials">
+          <a href="#"><i class="ri-facebook-fill"></i></a>
+          <a href="#"><i class="ri-instagram-line"></i></a>
+          <a href="#"><i class="ri-twitter-fill"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <div class="footer__links">
+          <a href="#">Business</a>
+          <a href="#">Franchise</a>
+          <a href="#">Partnership</a>
+          <a href="#">Network</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>About Us</h4>
+        <div class="footer__links">
+          <a href="#">Blogs</a>
+          <a href="#">Security</a>
+          <a href="#">Careers</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <div class="footer__links">
+          <a href="#">Contact Us</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">BMI Calculator</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2023 Web Design Mastery. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

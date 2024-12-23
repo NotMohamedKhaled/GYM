@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/profile.css">
+    <title>APEX</title>
+    <link rel="icon" href="/static/pic/qq.png">  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="nav__header">
+          <div class="nav__logo">
+            <a href="/index.html"><img src="/static/pic/qq.png" alt="logo" /><p>A<span style="color: red;">P</span>EX GYM</p></a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <span><i class="ri-menu-line"></i></span>
+          </div>
+       
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li class="link"><a href="/index.html">Home</a></li>
+          <li class="link"><a href="/about.html">About</a></li>
+          <li class="link"><a href="/class.html">Classes</a></li>
+          <li class="link"><a href="/trainers.html">Trainers</a></li>
+          <li class="link"><a href="/pricing.html">Pricing</a></li>
+          <li class="link"><button class="btn" onclick="window.location.href='contact_us.html'  ">Contact Us</button></li>
+        </ul>
+        
+   
+</button> 
+<button class="login-profile" 
+    onclick="window.location.href='/login.html'">
+    <img src="/static/pic/login.png" alt="Profile" class="profile_icon">
+    <!-- <button onclick="window.location.href='/profileunsignned.html'"><img src="/static/pic/user.png" alt=""></button> -->
+    <button class="probtn" onclick="window.location.href='/profileunsignned.html'"><img src="/static/pic/user.png"class="userimg" alt=""></button>
+
+
+    
+    
+        </nav>
+    </header>
+
+
+    <div id="flash-container">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="flash-message flash-{{ category }}">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+  </div>
+
+  <div class="section__container">
+    <div class="profile__container">
+        <div class="top">
+            <img src="/static/pic/user.png" alt="">
+            <h2>{{ user.username }}</h2>
+        </div>
+        <div class="side">
+            <p>Email: <span style="margin-left: 20px;">{{ user.email }}</span></p>
+            <p>Phone Number: <span style="margin-left: 20px;">{{ user.phone }}</span></p>
+            <p>Courses: <span style="margin-left: 20px;">{{ user.courses }}</span></p> <!-- Display enrolled courses -->
+            {% if user %}
+            <span style="margin-left: 20px;"><a href="/pricing.html" style="color: #a31010; font-size: 20px;"><br>Check our Plans!<br></a></span>
+            <button class="logout__button" onclick="logoutUser()">Log out</button>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const flashMessages = document.querySelectorAll('.flash-message');
+      flashMessages.forEach((message) => {
+          message.style.display = 'block'; // Show the flash message
+          setTimeout(() => {
+              message.style.display = 'none'; // Hide after 3 seconds
+          }, 3000); // Adjust time as needed
+      });
+  });
+</script>
+<!-- <script>
+  var userLoggedIn =user_logged_in;
+  if(userLoggedIn){
+    console.log("yeyey");
+  }
+  console.log("User logged in: ", userLoggedIn);
+
+  if (userLoggedIn) {
+      // Perform actions if the user is logged in
+      console.log("User is logged in.");
+  } else {
+      // Perform actions if the user is not logged in
+      console.log("User is not logged in.");
+  }
+</script> -->
+
+
+
+
+
+    <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="footer__logo">
+            <a href="/index.html"><img src="/static/pic/qq.png" alt="logo" /><p>A<span style="color: red;">P</span>EX GYM</p></a>
+          </div>
+          <p>
+            Take the first step towards a healthier, stronger you with our
+            unbeatable pricing plans. Let's sweat, achieve, and conquer
+            together!
+          </p>
+          <div class="footer__socials">
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <div class="footer__links">
+            <a href="#">Business</a>
+            <a href="#">Franchise</a>
+            <a href="#">Partnership</a>
+            <a href="#">Network</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>About Us</h4>
+          <div class="footer__links">
+            <a href="#">Blogs</a>
+            <a href="#">Security</a>
+            <a href="#">Careers</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <div class="footer__links">
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">BMI Calculator</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2023 Web Design Mastery. All rights reserved.
+      </div>
+    </footer>
+    <script>
+      function logoutUser() {
+        // Clear localStorage
+        localStorage.removeItem('userData');
+      
+        // Redirect to the Flask logout route to clear session
+        window.location.href = "/logout";
+      }
+      </script>
+
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="/static/js/main.js"></script>
+  </body>
+</html>

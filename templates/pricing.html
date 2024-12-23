@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/pricing.css">
+    <title>APEX</title>
+    <link rel="icon" href="/static/pic/qq.png">  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="nav__header">
+          <div class="nav__logo">
+            <a href="/index.html"><img src="/static/pic/qq.png" alt="logo" /><p>A<span style="color: red;">P</span>EX GYM</p></a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <span><i class="ri-menu-line"></i></span>
+          </div>
+       
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li class="link"><a href="/index.html">Home</a></li>
+          <li class="link"><a href="/about.html">About</a></li>
+          <li class="link"><a href="/class.html">Classes</a></li>
+          <li class="link"><a href="/trainers.html">Trainers</a></li>
+          <li class="link"><a href="/pricing.html">Pricing</a></li>
+          <li class="link"><button class="btn" onclick="window.location.href='contact_us.html'  ">Contact Us</button></li>
+        </ul>
+        <button class="login-profile" 
+    onclick="window.location.href='/login.html'">
+    <img src="/static/pic/login.png" alt="Profile" class="profile_icon">
+   
+</button> 
+<button class="probtn" onclick="window.location.href='/profileunsignned.html'"><img src="/static/pic/user.png"class="userimg" alt=""></button>
+
+        <!-- <button class="login-profile" 
+        onclick="window.location.href='{% if (session['username']) %}/profile/{{session['username']}}{% else %}/login.html{% endif %}'">
+        <img src="/static/pic/user.png" alt="Profile" class="profile_icon">
+    </button> -->
+    
+        </nav>
+    </header>
+
+
+
+      <section class="section__container price__container" id="price">
+        <h2 class="section__header">Our Pricing</h2>
+        <p class="section__description">
+          Our pricing plan comes with various membership tiers, each tailored to
+          cater to different preferences and fitness aspirations.
+        </p>
+        <div class="price__card">
+          <div class="price__content">
+              <h4>Basic Plan</h4>
+              <img src="/static/pic/price-1.png" alt="price" />
+              <p>Our Basic Plan is the perfect starting point...</p>
+              <hr />
+              <h4>Key Features</h4>
+              <p>Smart workout plan</p>
+              <p>At home workouts</p>
+          </div>
+          <button class="btn" data-course="Basic Plan">Join Now</button>
+      </div>
+      
+      <div class="price__card">
+          <div class="price__content">
+              <h4>Weekly Plan</h4>
+              <img src="/static/pic/price-2.png" alt="price" />
+              <p>Our weekly plan is designed to provide structure...</p>
+              <hr />
+              <h4>Key Features</h4>
+              <p>PRO Gyms</p>
+              <p>Smart workout plan</p>
+              <p>At home workouts</p>
+          </div>
+          <button class="btn" data-course="Weekly Plan">Join Now</button>
+      </div>
+      
+      <div class="price__card">
+          <div class="price__content">
+              <h4>Monthly Plan</h4>
+              <img src="/static/pic/price-3.png" alt="price" />
+              <p>With this flexible membership...</p>
+              <hr />
+              <h4>Key Features</h4>
+              <p>ELITE Gyms & Classes</p>
+              <p>PRO Gyms</p>
+              <p>Smart workout plan</p>
+              <p>At home workouts</p>
+              <p>Personal Training</p>
+          </div>
+          <button class="btn" data-course="Monthly Plan">Join Now</button>
+      </div>
+        </div>
+      </section>
+  <footer class="footer">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <div class="footer__logo">
+          <a href="/index.html"><img src="/static/pic/qq.png" alt="logo" /><p>A<span style="color: red;">P</span>EX GYM</p></a>
+        </div>
+        <p>
+          Take the first step towards a healthier, stronger you with our
+          unbeatable pricing plans. Let's sweat, achieve, and conquer
+          together!
+        </p>
+        <div class="footer__socials">
+          <a href="#"><i class="ri-facebook-fill"></i></a>
+          <a href="#"><i class="ri-instagram-line"></i></a>
+          <a href="#"><i class="ri-twitter-fill"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <div class="footer__links">
+          <a href="#">Business</a>
+          <a href="#">Franchise</a>
+          <a href="#">Partnership</a>
+          <a href="#">Network</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>About Us</h4>
+        <div class="footer__links">
+          <a href="#">Blogs</a>
+          <a href="#">Security</a>
+          <a href="#">Careers</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <div class="footer__links">
+          <a href="#">Contact Us</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">BMI Calculator</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2023 Web Design Mastery. All rights reserved.
+    </div>
+  </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.btn');  // Select all "Join Now" buttons
+    buttons.forEach(button => {
+        button.addEventListener('click', function () {
+            const courseName = this.closest('.price__card').querySelector('h4').innerText;
+            
+            fetch('/enroll_course', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ course: courseName })
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    throw new Error('Error enrolling in the course');
+                }
+            })
+            .then(html => {
+                document.body.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    });
+});
+</script>
+
+
+<script>
+  function logoutUser() {
+    // Clear localStorage
+    localStorage.removeItem('userData');
+  
+    // Redirect to the Flask logout route to clear session
+    window.location.href = "/logout";
+  }
+  </script>
+<script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+.class__grid {
+    margin-top: 4rem;
+    display: grid;
+    gap: 2rem;
+  }
+  
+  .class__card {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .class__card .class__bg {
+    position: absolute;
+    max-width: 175px;
+    top: -3rem;
+    right: -1rem;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  
+  .class__card:hover .class__bg {
+    opacity: 0.5;
+  }
+  
+  .class__card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .class__content {
+    flex: 1;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
+  
+  .class__content h4 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  
+.swiper {
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+.swiper-slide {
+  max-width: 500px;
+  padding-inline: 1rem;
+  padding-top: 4rem;
+}
+
+.client__card {
+  position: relative;
+  padding-block: 4rem 2rem;
+  padding-inline: 2rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.client__card img {
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  transform: translateY(-50%);
+  max-width: 80px;
+  border-radius: 100%;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.client__ratings {
+  margin-bottom: 1rem;
+  color: goldenrod;
+}
+
+.client__card p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.client__card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.client__card h5 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+}

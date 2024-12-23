@@ -1,0 +1,64 @@
+.trainer__container :is(.section__header, .section__description) {
+    width: fit-content;
+    margin-inline: auto;
+    text-align: center;
+  }
+  
+  .trainer__container .section__header::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .trainer__grid {
+    margin-top: 4rem;
+    display: grid;
+    align-items: center;
+  }
+
+  .trainer__card {
+    height: 100%;
+    display: grid;
+    align-items: center;
+  }
+  
+  .trainer__card img {
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .trainer__content {
+    padding: 2rem 1rem;
+  }
+  
+  .trainer__content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+  
+  .trainer__content h5 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-light);
+  }
+  
+  .trainer__content p {
+    margin-block: 1rem;
+    color: var(--text-light);
+  }
+  
+  .trainer__socials {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .trainer__socials a {
+    font-size: 1.2rem;
+    color: var(--text-light);
+  }
+  
+  .trainer__socials a:hover {
+    color: var(--primary-color);
+  }
